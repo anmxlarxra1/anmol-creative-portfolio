@@ -53,7 +53,12 @@ projects.forEach((p, idx) => {
     }
 
     if (!normalized.startsWith('http')) {
-      const cleanPath = normalized.startsWith('/') ? normalized.slice(1) : normalized;
+      let cleanPath = normalized;
+      if (cleanPath.startsWith('/anmol-creative-portfolio/')) {
+        cleanPath = cleanPath.replace('/anmol-creative-portfolio/', '');
+      } else if (cleanPath.startsWith('/')) {
+        cleanPath = cleanPath.slice(1);
+      }
       const fullPath = path.resolve('./public', cleanPath);
       if (!fs.existsSync(fullPath)) {
         errors.push(`Image file not found for project "${p.title}": ${fullPath}`);
@@ -66,7 +71,12 @@ projects.forEach((p, idx) => {
     p.images.forEach((img) => {
       const norm = normalizeImagePath(img);
       if (!norm.startsWith('http')) {
-        const cleanImgPath = norm.startsWith('/') ? norm.slice(1) : norm;
+        let cleanImgPath = norm;
+        if (cleanImgPath.startsWith('/anmol-creative-portfolio/')) {
+          cleanImgPath = cleanImgPath.replace('/anmol-creative-portfolio/', '');
+        } else if (cleanImgPath.startsWith('/')) {
+          cleanImgPath = cleanImgPath.slice(1);
+        }
         const fullImgPath = path.resolve('./public', cleanImgPath);
         if (!fs.existsSync(fullImgPath)) {
           errors.push(`Multi-image file not found for project "${p.title}": ${fullImgPath}`);

@@ -4,7 +4,8 @@
  * - "images/my-poster.png"
  * - "/images/my-poster.webp"
  * - "https://example.com/poster.jpg"
- * All local paths are resolved to point cleanly to the public folder.
+ * All local paths are resolved to point cleanly to the public folder,
+ * properly respecting Vite's base path for GitHub Pages deployment.
  */
 export function normalizeImagePath(path) {
   if (!path || typeof path !== 'string') return '';
@@ -15,23 +16,35 @@ export function normalizeImagePath(path) {
     return trimmed;
   }
 
-  // If just a filename like "my-poster.jpg" or "ai-hackathon.png"
-  if (!trimmed.includes('/')) {
-    return `/images/${trimmed}`;
+  // Determine base path from Vite env (e.g. '/anmol-creative-portfolio/' in prod or '/' in dev)
+  let base = '/';
+  if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL) {
+    base = import.meta.env.BASE_URL;
+  }
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+
+  let subPath = trimmed;
+  // If starts with "/", strip it to safely prefix cleanBase
+  if (subPath.startsWith('/')) {
+    subPath = subPath.slice(1);
+  }
+
+  // If starts with "anmol-creative-portfolio/", strip it so cleanBase doesn't duplicate
+  if (subPath.startsWith('anmol-creative-portfolio/')) {
+    subPath = subPath.replace(/^anmol-creative-portfolio\//, '');
   }
 
   // If starts with "images/..."
-  if (trimmed.startsWith('images/')) {
-    return `/${trimmed}`;
+  if (subPath.startsWith('images/')) {
+    return `${cleanBase}${subPath}`;
   }
 
-  // If starts with "/" but not "/images/" (e.g. "/my-poster.png")
-  if (trimmed.startsWith('/') && !trimmed.startsWith('/images/')) {
-    return `/images${trimmed}`;
+  // If just a filename like "my-poster.jpg"
+  if (!subPath.includes('/')) {
+    return `${cleanBase}images/${subPath}`;
   }
 
-  // Already "/images/..."
-  return trimmed;
+  return `${cleanBase}${subPath}`;
 }
 
 /**

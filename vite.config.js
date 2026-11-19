@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Using relative base path makes it directly compatible with GitHub Pages subfolder deployment!
-  base: './',
+  // Configured for GitHub Pages deployment under https://anmxlarxra1.github.io/anmol-creative-portfolio/
+  base: '/anmol-creative-portfolio/',
   server: {
     port: 3000,
     open: true
