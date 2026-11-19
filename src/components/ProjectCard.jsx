@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Eye, Sparkles, Layers, ImageOff, ArrowUpRight } from 'lucide-react';
+import { Eye, Sparkles, Layers, ImageOff, ArrowUpRight, Compass } from 'lucide-react';
+import { normalizeImagePath } from '../utils/imageHelper';
 
 export default function ProjectCard({ project, onSelect }) {
   const [imgError, setImgError] = useState(false);
@@ -13,6 +14,7 @@ export default function ProjectCard({ project, onSelect }) {
   };
 
   const categoryTag = categoryNames[project.category] || project.category;
+  const imageSrc = normalizeImagePath(project.image);
 
   return (
     <article
@@ -24,23 +26,32 @@ export default function ProjectCard({ project, onSelect }) {
       {/* Image Preview Container */}
       <div className="relative aspect-[16/10] sm:aspect-[16/11] w-full overflow-hidden bg-dark-900">
         
-        {/* Featured Ribbon / Badge */}
-        {project.featured && (
-          <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark-950/80 backdrop-blur-md border border-amber-500/30 text-amber-300 text-[11px] font-mono font-medium shadow-lg shadow-amber-500/10">
-            <Sparkles className="w-3 h-3 text-amber-400" />
-            <span>Featured Project</span>
-          </div>
-        )}
+        {/* Badges Top Left: Featured & Concept */}
+        <div className="absolute top-3 left-3 z-10 flex flex-wrap gap-1.5 items-center">
+          {project.featured && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-950/85 backdrop-blur-md border border-amber-500/40 text-amber-300 text-[11px] font-mono font-medium shadow-lg shadow-amber-500/10">
+              <Sparkles className="w-3 h-3 text-amber-400" />
+              <span>Featured</span>
+            </div>
+          )}
 
-        {/* Year Tag Right */}
+          {project.isConcept && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-950/85 backdrop-blur-md border border-cyan-500/40 text-cyan-300 text-[11px] font-mono font-medium shadow-lg shadow-cyan-500/10">
+              <Compass className="w-3 h-3 text-cyan-400" />
+              <span>Concept</span>
+            </div>
+          )}
+        </div>
+
+        {/* Year Tag Top Right */}
         <div className="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md bg-dark-950/70 backdrop-blur-md border border-white/[0.1] text-canvas-muted text-[11px] font-mono">
           {project.year || '2026'}
         </div>
 
-        {/* Actual Image or Fallback */}
-        {!imgError && project.image ? (
+        {/* Actual Image (JPG, PNG, WebP, SVG) or Graceful Fallback */}
+        {!imgError && imageSrc ? (
           <img
-            src={project.image}
+            src={imageSrc}
             alt={project.title}
             onError={() => setImgError(true)}
             loading="lazy"
@@ -53,10 +64,10 @@ export default function ProjectCard({ project, onSelect }) {
               <Layers className="w-6 h-6" />
             </div>
             <p className="font-display font-bold text-sm text-canvas-text">{project.title}</p>
-            <span className="text-[11px] font-mono text-accent-cyan mt-1">Design Spec Preview</span>
+            <span className="text-[11px] font-mono text-accent-cyan mt-1">{categoryTag}</span>
             <div className="mt-3 flex items-center gap-1.5 text-[10px] text-canvas-dim font-mono">
               <ImageOff className="w-3 h-3" />
-              <span>Placeholder Active</span>
+              <span>Drop image in public/images/</span>
             </div>
           </div>
         )}

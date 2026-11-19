@@ -15,6 +15,7 @@ import {
   ExternalLink,
   ImageOff
 } from 'lucide-react';
+import { normalizeImagePath } from '../utils/imageHelper';
 
 export default function ProjectModal({
   project,
@@ -27,10 +28,12 @@ export default function ProjectModal({
   const [copiedHex, setCopiedHex] = useState(null);
   const [modalImgError, setModalImgError] = useState(false);
 
-  // Normalize image list
-  const imageList = project.images && project.images.length > 0 
+  // Normalize image list and resolve paths
+  const rawImages = project.images && project.images.length > 0 
     ? project.images 
     : [project.image || ''];
+
+  const imageList = rawImages.map(normalizeImagePath).filter(Boolean);
 
   // Reset active image index and error state when project changes
   useEffect(() => {
@@ -71,6 +74,8 @@ export default function ProjectModal({
     uiux: 'UI/UX Designs',
   };
 
+  const currentImage = imageList[activeImageIndex];
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-8 animate-fade-in">
       
@@ -89,7 +94,7 @@ export default function ProjectModal({
         
         {/* Top Header Bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-dark-950/60 backdrop-blur-sm">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5">
             <span className="text-xs font-mono uppercase tracking-wider text-accent-purple font-semibold">
               {categoryLabels[project.category] || project.category}
             </span>
@@ -97,9 +102,18 @@ export default function ProjectModal({
             <span className="text-xs font-mono text-canvas-dim">
               ID #{project.id}
             </span>
+            
+            {/* Featured Badge */}
             {project.featured && (
-              <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-mono text-amber-300">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-mono text-amber-300">
                 <Sparkles className="w-2.5 h-2.5" /> Featured
+              </span>
+            )}
+
+            {/* Concept Project Badge */}
+            {project.isConcept && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[10px] font-mono text-cyan-300">
+                <Compass className="w-2.5 h-2.5" /> Concept Design
               </span>
             )}
           </div>
@@ -143,22 +157,29 @@ export default function ProjectModal({
           
           {/* Main Title & Overview Header */}
           <div className="space-y-3">
-            <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
-              {project.title}
-            </h2>
+            <div className="flex flex-wrap items-center gap-3">
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
+                {project.title}
+              </h2>
+              {project.isConcept && (
+                <span className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-canvas-dim">
+                  Self-Directed Design Exploration
+                </span>
+              )}
+            </div>
             <p className="text-base sm:text-lg text-canvas-muted leading-relaxed font-sans max-w-3xl">
               {project.description}
             </p>
           </div>
 
-          {/* Large Design Preview Gallery */}
+          {/* Large Design Preview Gallery (Supports JPG, PNG, WebP, SVG) */}
           <div className="space-y-4">
             <div className="relative w-full rounded-2xl overflow-hidden bg-dark-950 border border-white/[0.08] shadow-inner flex items-center justify-center min-h-[300px] max-h-[600px]">
               
-              {!modalImgError && imageList[activeImageIndex] ? (
+              {!modalImgError && currentImage ? (
                 <img
-                  key={imageList[activeImageIndex]}
-                  src={imageList[activeImageIndex]}
+                  key={currentImage}
+                  src={currentImage}
                   alt={`${project.title} - View ${activeImageIndex + 1}`}
                   onError={() => setModalImgError(true)}
                   className="w-full h-auto max-h-[600px] object-contain rounded-2xl animate-fade-in"
@@ -168,12 +189,12 @@ export default function ProjectModal({
                   <div className="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-accent-purple">
                     <Layers className="w-7 h-7" />
                   </div>
-                  <h4 className="font-display font-bold text-lg text-white">Visual Design Specification</h4>
+                  <h4 className="font-display font-bold text-lg text-white">Design Preview Placeholder</h4>
                   <p className="text-xs text-canvas-muted font-mono max-w-sm">
-                    Image path: {imageList[activeImageIndex] || 'Not specified'}
+                    Image path: {currentImage || 'No image defined'}
                   </p>
                   <p className="text-xs text-accent-cyan">
-                    Placeholder mode active for effortless mockups
+                    Supported formats: .jpg, .png, .webp, .svg (Save in public/images/)
                   </p>
                 </div>
               )}

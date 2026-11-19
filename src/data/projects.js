@@ -3,29 +3,49 @@
  * ANMOL — PORTFOLIO PROJECT REPOSITORY
  * ==============================================================================
  * 
- * HOW TO ADD A NEW PROJECT:
- * 1. Put your image(s) in the `public/images/` folder (e.g., `public/images/my-new-poster.jpg` or `.png` or `.svg`).
- * 2. Copy one of the project objects below and paste it at the top or bottom of the `projects` array.
- * 3. Fill in the fields:
- *    - `id`: Unique number or string (e.g. 10)
- *    - `title`: Project name (e.g. "Spring Fest Announcement")
- *    - `category`: Must match one of: "posters", "branding", "social", or "uiux"
- *    - `description`: A short 1-2 sentence overview for the card
- *    - `image`: Primary preview image path relative to public folder (e.g. "/images/my-new-poster.jpg")
- *    - `images`: Optional array of multiple images for the modal gallery viewer
- *    - `tools`: Array of tools used, e.g. ["Canva", "Figma", "ChatGPT"]
- *    - `year`: Project year, e.g. "2026"
- *    - `featured`: Set to `true` to highlight with a gold/amber glow badge
- *    - `objective`: Why this project was created and what problem it solves
- *    - `concept`: The visual idea, mood, or artistic direction
- *    - `palette`: Hex color codes used in the design
- *    - `typography`: Fonts paired in the piece
- *    - `process`: Description of the steps taken from initial idea to final export
- *    - `outcome`: The final result, impact, or key takeaway
+ * 🖼️ WHERE TO PLACE YOUR IMAGES:
+ * Place all your image files directly into the:
+ *   👉 public/images/
+ * directory.
  * 
- * NOTE ON MISSING IMAGES:
- * If an image path is invalid or missing, the portfolio will automatically
- * render a graceful fallback banner with the project title and category badge.
+ * 📁 SUPPORTED IMAGE FORMATS:
+ * - JPG / JPEG (.jpg, .jpeg)
+ * - PNG (.png) — with or without transparency
+ * - WebP (.webp) — recommended for optimal web loading
+ * - SVG (.svg) — razor sharp vectors
+ * 
+ * 💡 PATH SHORTCUTS:
+ * You can write:
+ *   image: "my-poster.png"             (automatically finds /images/my-poster.png)
+ *   image: "/images/my-poster.jpg"
+ *   image: "https://..."               (external links work too)
+ * 
+ * 🏷️ "isConcept" BADGE:
+ * - Set `isConcept: true` if the project is a self-initiated concept/study.
+ * - Set `isConcept: false` (or omit it) when it is a real design created by you!
+ * 
+ * 🚀 QUICK COPY-PASTE TEMPLATE FOR A NEW PROJECT:
+ * {
+ *   id: 10,
+ *   title: "Your Project Title",
+ *   category: "posters",               // "posters" | "branding" | "social" | "uiux"
+ *   description: "A short 1-2 sentence summary of this design.",
+ *   image: "your-file.png",            // placed in public/images/
+ *   images: [                          // optional: multiple images for slider
+ *     "your-file.png",
+ *     "your-file-detail.png"
+ *   ],
+ *   tools: ["Canva", "Figma"],
+ *   year: "2026",
+ *   featured: true,                    // true to show glowing featured badge
+ *   isConcept: false,                  // false = Real work, true = Concept design
+ *   objective: "The goal or purpose of this design piece.",
+ *   concept: "The visual style, color choices, and creative direction.",
+ *   palette: ["#08080a", "#8b5cf6", "#06b6d4", "#f4f4f7"],
+ *   typography: "Syne 800 + Plus Jakarta Sans",
+ *   process: "How you built it: sketch, layout in Canva/Figma, revisions.",
+ *   outcome: "Where it was posted/printed or what was achieved."
+ * }
  * ==============================================================================
  */
 
@@ -51,6 +71,7 @@ export const projects = [
     tools: ["ChatGPT", "Canva"],
     year: "2026",
     featured: true,
+    isConcept: true,
     objective: "Design a high-impact, university-wide promotional poster to drive registrations for the 48-hour student AI hackathon.",
     concept: "Electric violet and cyan neon luminescence emerging from deep obsidian space, symbolizing autonomous machine intelligence breaking into human reality.",
     palette: ["#08080a", "#8b5cf6", "#06b6d4", "#f4f4f7"],
@@ -70,6 +91,7 @@ export const projects = [
     tools: ["Figma", "Canva"],
     year: "2026",
     featured: true,
+    isConcept: true,
     objective: "Create an Apple-inspired announcement poster for the campus iOS Core Team recruitment and tech orientation.",
     concept: "Sleek Cupertino-grade frosted glass materials, Swift orange-to-magenta fiery gradient, and disciplined typographic hierarchy.",
     palette: ["#050508", "#ff7a00", "#ff0055", "#0071e3", "#ffffff"],
@@ -90,6 +112,7 @@ export const projects = [
     tools: ["Figma", "ChatGPT"],
     year: "2026",
     featured: true,
+    isConcept: true,
     objective: "Design an intuitive, iOS Human Interface Guidelines-compliant mobile experience for onboarding new campus iOS club recruits.",
     concept: "Deep OLED dark mode, fluid blur surfaces, dynamic island status badges, and large tactile tap targets tailored for iOS 18.",
     palette: ["#07080c", "#0071e3", "#38bdf8", "#10b981", "#f8fafc"],
@@ -110,6 +133,7 @@ export const projects = [
     tools: ["Figma", "Canva"],
     year: "2026",
     featured: true,
+    isConcept: true,
     objective: "Establish a unified, scalable monogram and visual identity system for a multidisciplinary student design lab.",
     concept: "A geometric fusion of the uppercase 'A' and an upward delta compass arrow, representing creative momentum and forward elevation.",
     palette: ["#0b0b0f", "#7c3aed", "#a78bfa", "#f8fafc"],
@@ -129,6 +153,7 @@ export const projects = [
     tools: ["Canva", "ChatGPT"],
     year: "2026",
     featured: false,
+    isConcept: true,
     objective: "Produce engaging, reusable social announcement templates to spotlight guest industry tech leads and alumni speakers.",
     concept: "Editorial magazine aesthetics featuring high-contrast duotone frames, electric blue badges, and distinct swipe call-to-actions.",
     palette: ["#090a12", "#13192e", "#38bdf8", "#818cf8", "#ffffff"],
@@ -148,6 +173,7 @@ export const projects = [
     tools: ["Canva", "Figma"],
     year: "2026",
     featured: false,
+    isConcept: true,
     objective: "Design a warm, welcoming brand identity for an on-campus artisanal coffee kiosk concept.",
     concept: "Rustic meets modern: organic terracotta and roasted amber tones paired with minimalist circular crest badges and kraft paper textures.",
     palette: ["#14110e", "#d97706", "#f59e0b", "#fef3c7"],
@@ -167,6 +193,7 @@ export const projects = [
     tools: ["Canva", "ChatGPT"],
     year: "2026",
     featured: false,
+    isConcept: true,
     objective: "Attract talented student illustrators, visual designers, and video editors to join the university core team.",
     concept: "Kinetic oversized typography colliding with high-voltage crimson accents to spark creative ambition and challenge conventional design.",
     palette: ["#0a0508", "#fb7185", "#f43f5e", "#ffffff"],
@@ -186,6 +213,7 @@ export const projects = [
     tools: ["Canva", "Figma"],
     year: "2026",
     featured: false,
+    isConcept: true,
     objective: "Share valuable design fundamentals with student peers through visual, easy-to-digest micro-content.",
     concept: "Editorial comparison cards highlighting 'Good vs Bad' dark mode contrast principles with crisp annotation tags.",
     palette: ["#0a0a14", "#6366f1", "#10b981", "#ef4444", "#f4f4f7"],
@@ -205,6 +233,7 @@ export const projects = [
     tools: ["Figma"],
     year: "2026",
     featured: false,
+    isConcept: true,
     objective: "Explore creative music player user interfaces prioritizing immersive mood, ambient lighting, and haptic minimalism.",
     concept: "Dynamic aura glow reflecting the primary hues of the album artwork, paired with an animated waveform progress bar.",
     palette: ["#05060a", "#ec4899", "#8b5cf6", "#f9fafb"],

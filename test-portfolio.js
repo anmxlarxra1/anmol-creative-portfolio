@@ -1,5 +1,6 @@
 import { projects, CATEGORIES } from './src/data/projects.js';
 import { profileData } from './src/data/profile.js';
+import { normalizeImagePath, isSupportedImageFormat } from './src/utils/imageHelper.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -17,6 +18,8 @@ if (!categoryIds.includes('all') || !categoryIds.includes('posters') || !categor
 // 2. Validate Projects
 console.log(`✓ Total projects defined: ${projects.length}`);
 
+let conceptCount = 0;
+
 projects.forEach((p, idx) => {
   const requiredKeys = ['id', 'title', 'category', 'description', 'image', 'tools', 'year', 'featured', 'process'];
   for (const key of requiredKeys) {
@@ -24,6 +27,8 @@ projects.forEach((p, idx) => {
       errors.push(`Project index ${idx} ("${p.title || 'Untitled'}") is missing required key "${key}"`);
     }
   }
+
+  if (p.isConcept) conceptCount++;
 
   // Check category validity
   if (!['posters', 'branding', 'social', 'uiux'].includes(p.category)) {
@@ -35,26 +40,38 @@ projects.forEach((p, idx) => {
     errors.push(`Project "${p.title}" tools should be a non-empty array`);
   }
 
-  // Check image file exists
+  // Check image normalization and format support
   if (p.image) {
-    const cleanPath = p.image.startsWith('/') ? p.image.slice(1) : p.image;
-    const fullPath = path.resolve('./public', cleanPath);
-    if (!fs.existsSync(fullPath)) {
-      errors.push(`Image file not found for project "${p.title}": ${fullPath}`);
+    const normalized = normalizeImagePath(p.image);
+    if (!isSupportedImageFormat(normalized)) {
+      errors.push(`Image "${p.image}" does not have a supported image extension (.jpg, .png, .webp, .svg)`);
+    }
+
+    if (!normalized.startsWith('http')) {
+      const cleanPath = normalized.startsWith('/') ? normalized.slice(1) : normalized;
+      const fullPath = path.resolve('./public', cleanPath);
+      if (!fs.existsSync(fullPath)) {
+        errors.push(`Image file not found for project "${p.title}": ${fullPath}`);
+      }
     }
   }
 
   // Check multi-images if specified
   if (p.images && Array.isArray(p.images)) {
     p.images.forEach((img) => {
-      const cleanImgPath = img.startsWith('/') ? img.slice(1) : img;
-      const fullImgPath = path.resolve('./public', cleanImgPath);
-      if (!fs.existsSync(fullImgPath)) {
-        errors.push(`Multi-image file not found for project "${p.title}": ${fullImgPath}`);
+      const norm = normalizeImagePath(img);
+      if (!norm.startsWith('http')) {
+        const cleanImgPath = norm.startsWith('/') ? norm.slice(1) : norm;
+        const fullImgPath = path.resolve('./public', cleanImgPath);
+        if (!fs.existsSync(fullImgPath)) {
+          errors.push(`Multi-image file not found for project "${p.title}": ${fullImgPath}`);
+        }
       }
     });
   }
 });
+
+console.log(`✓ Concept projects identified & labelled: ${conceptCount}/${projects.length}`);
 
 // 3. Category distribution
 const counts = {};
