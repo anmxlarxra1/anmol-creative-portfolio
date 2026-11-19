@@ -21,31 +21,8 @@
  *   image: "https://..."               (external links work too)
  * 
  * 🏷️ "isConcept" BADGE:
+ * - Set `isConcept: false` for your actual real designs (no concept badge).
  * - Set `isConcept: true` if the project is a self-initiated concept/study.
- * - Set `isConcept: false` (or omit it) when it is a real design created by you!
- * 
- * 🚀 QUICK COPY-PASTE TEMPLATE FOR A NEW PROJECT:
- * {
- *   id: 10,
- *   title: "Your Project Title",
- *   category: "posters",               // "posters" | "branding" | "social" | "uiux"
- *   description: "A short 1-2 sentence summary of this design.",
- *   image: "your-file.png",            // placed in public/images/
- *   images: [                          // optional: multiple images for slider
- *     "your-file.png",
- *     "your-file-detail.png"
- *   ],
- *   tools: ["Canva", "Figma"],
- *   year: "2026",
- *   featured: true,                    // true to show glowing featured badge
- *   isConcept: false,                  // false = Real work, true = Concept design
- *   objective: "The goal or purpose of this design piece.",
- *   concept: "The visual style, color choices, and creative direction.",
- *   palette: ["#08080a", "#8b5cf6", "#06b6d4", "#f4f4f7"],
- *   typography: "Syne 800 + Plus Jakarta Sans",
- *   process: "How you built it: sketch, layout in Canva/Figma, revisions.",
- *   outcome: "Where it was posted/printed or what was achieved."
- * }
  * ==============================================================================
  */
 
@@ -58,109 +35,113 @@ export const CATEGORIES = [
 ];
 
 export const projects = [
+  // ============================================================================
+  // ANMOL'S ORIGINAL DESIGNS (FROM MY-DESIGNS)
+  // ============================================================================
   {
     id: 1,
-    title: "AI Hackathon 2026",
+    title: "AI Hackathon Poster",
     category: "posters",
-    description: "A futuristic AI hackathon poster concept combining cybernetic typography, neon gradient lighting, and structured event metadata.",
-    image: "/images/ai-hackathon.svg",
+    description: "A Swiss-inspired high-impact promotional poster for an AI innovation sprint with structured typographic hierarchy and warm editorial tones.",
+    image: "/images/ai-hackathon-poster.png",
     images: [
-      "/images/ai-hackathon.svg",
-      "/images/ai-hackathon-detail.svg"
+      "/images/ai-hackathon-poster.png"
     ],
-    tools: ["ChatGPT", "Canva"],
+    tools: ["Figma", "Canva"],
     year: "2026",
     featured: true,
-    isConcept: true,
-    objective: "Design a high-impact, university-wide promotional poster to drive registrations for the 48-hour student AI hackathon.",
-    concept: "Electric violet and cyan neon luminescence emerging from deep obsidian space, symbolizing autonomous machine intelligence breaking into human reality.",
-    palette: ["#08080a", "#8b5cf6", "#06b6d4", "#f4f4f7"],
-    typography: "Syne 800 (Editorial Display) + Space Mono (Metadata)",
-    process: "Used ChatGPT to brainstorm high-energy headline hooks ('INTELLIGENCE UNBOUND'). Designed grid structure in Canva, balancing typography hierarchy with event dates and prize badges.",
-    outcome: "Generated widespread student buzz with an editorial visual aesthetic that stands out on campus noticeboards and digital Discord channels."
+    isConcept: false,
+    objective: "Design a compelling event announcement poster to capture student attention and drive hackathon registrations across physical and digital boards.",
+    concept: "Swiss International Typographic Style with disciplined asymmetric grid balance, bold geometric typography, and warm terracotta contrast.",
+    palette: ["#a35430", "#f6f2ed", "#d6cdc6", "#1a1918"],
+    typography: "Neue Haas Grotesk / Swiss Display + Plus Jakarta Sans",
+    process: "Drafted grid structures exploring negative space, balanced text hierarchy with dates and prize info, and fine-tuned editorial alignments.",
+    outcome: "A distinctive poster that stands out in print and on digital displays, combining technical clarity with creative sophistication."
   },
   {
     id: 2,
-    title: "iOS Core Team Dev Summit",
+    title: "iOS Recruitment Poster",
     category: "posters",
-    description: "Official keynote promotional banner celebrating Swift innovation, Apple ecosystem craft, and student app creators.",
-    image: "/images/ios-summit.svg",
+    description: "A clean, Swiss-style recruitment poster designed for the university iOS Core Team featuring classic typographic structure and Apple blue accents.",
+    image: "/images/ios-recruitment-poster.png",
     images: [
-      "/images/ios-summit.svg"
+      "/images/ios-recruitment-poster.png"
     ],
     tools: ["Figma", "Canva"],
     year: "2026",
     featured: true,
-    isConcept: true,
-    objective: "Create an Apple-inspired announcement poster for the campus iOS Core Team recruitment and tech orientation.",
-    concept: "Sleek Cupertino-grade frosted glass materials, Swift orange-to-magenta fiery gradient, and disciplined typographic hierarchy.",
-    palette: ["#050508", "#ff7a00", "#ff0055", "#0071e3", "#ffffff"],
-    typography: "Syne Black + Plus Jakarta Sans + SF-inspired geometry",
-    process: "Iterated wireframes in Figma exploring negative space and glassmorphism. Refined gradient lighting in Canva, then tested readability on mobile display mockups.",
-    outcome: "Delivered a refined, Apple-worthy event poster communicating the high standards and excitement of the university iOS Core Team."
+    isConcept: false,
+    objective: "Recruit passionate student developers, UI/UX creatives, and graphic designers for the campus iOS Core Team.",
+    concept: "Disciplined Swiss modernist layout utilizing high-contrast typographic scales, cobalt blue accents, and generous negative space.",
+    palette: ["#33509a", "#eeebea", "#18181b", "#ffffff"],
+    typography: "Swiss Sans-Serif + Plus Jakarta Sans",
+    process: "Researched International Typographic Style posters. Structured recruitment criteria, lab tracks, and scan-to-apply prompts into a modular grid.",
+    outcome: "A timeless, professional recruitment piece communicating high technical standards and design craft."
   },
   {
     id: 3,
-    title: "SwiftHub — Club Companion App UI",
-    category: "uiux",
-    description: "Clean 3-screen mobile onboarding and member hub experience for the university iOS Core Team student portal.",
-    image: "/images/swifthub-ui.svg",
-    images: [
-      "/images/swifthub-ui.svg",
-      "/images/swifthub-screens.svg"
-    ],
-    tools: ["Figma", "ChatGPT"],
-    year: "2026",
-    featured: true,
-    isConcept: true,
-    objective: "Design an intuitive, iOS Human Interface Guidelines-compliant mobile experience for onboarding new campus iOS club recruits.",
-    concept: "Deep OLED dark mode, fluid blur surfaces, dynamic island status badges, and large tactile tap targets tailored for iOS 18.",
-    palette: ["#07080c", "#0071e3", "#38bdf8", "#10b981", "#f8fafc"],
-    typography: "SF Pro Display Aesthetic / Plus Jakarta Sans",
-    process: "Mapped user journey for new recruits joining the club. Crafted reusable component cards, verified 44pt touch boundaries, and drafted interactive Figma prototype states.",
-    outcome: "A functional, high-fidelity UI design demonstrating keen appreciation for Apple design standards, information hierarchy, and UI ergonomics."
-  },
-  {
-    id: 4,
-    title: "Apex Creative Lab — Visual Identity",
+    title: "NOVA Brand Identity",
     category: "branding",
-    description: "Minimalist brand identity and geometric monogram exploration for a student-led multimedia design collective.",
-    image: "/images/apex-branding.svg",
+    description: "A Swiss minimalist brand identity system exploring logomark construction, typography rules, stationery, and warm editorial palettes.",
+    image: "/images/nova-brand-identity.png",
     images: [
-      "/images/apex-branding.svg",
-      "/images/apex-guidelines.svg"
+      "/images/nova-brand-identity.png"
     ],
     tools: ["Figma", "Canva"],
     year: "2026",
     featured: true,
-    isConcept: true,
-    objective: "Establish a unified, scalable monogram and visual identity system for a multidisciplinary student design lab.",
-    concept: "A geometric fusion of the uppercase 'A' and an upward delta compass arrow, representing creative momentum and forward elevation.",
-    palette: ["#0b0b0f", "#7c3aed", "#a78bfa", "#f8fafc"],
-    typography: "Syne ExtraBold (Logomark) + Space Mono (Collateral)",
-    process: "Hand-sketched 20+ logo thumbnails on paper. Vectorized the top geometric mark in Figma, defined exclusion perimeter zones, and rendered merchandise applications.",
-    outcome: "A versatile vector identity system that scales flawlessly from 16px favicon badges to full-scale event backdrops."
+    isConcept: false,
+    objective: "Create an elegant, cohesive visual identity system with high scalability across digital media and physical stationery.",
+    concept: "Understated luxury and mathematical grid order, pairing warm earthy umber tones with minimalist geometric symbols.",
+    palette: ["#7d533d", "#f6f0ea", "#ccc2b9", "#1c1917"],
+    typography: "Syne / Modern Serif + Clean Geometric Sans",
+    process: "Explored abstract brand mark iterations in Figma, defined clear space ratios, and developed identity collateral applications.",
+    outcome: "A comprehensive brand book showcase featuring letterheads, business cards, color architecture, and emblem rules."
   },
   {
-    id: 5,
-    title: "TechFest '26 — Speaker Spotlight",
+    id: 4,
+    title: "AI Tools Carousel",
     category: "social",
-    description: "Instagram 4:5 carousel templates designed for announcing keynote tech speakers and workshop mentors.",
-    image: "/images/techfest-social.svg",
+    description: "An editorial educational social carousel series curated for students, spotlighting essential AI tools for productivity and creative workflows.",
+    image: "/images/ai-tools-carousel.png",
     images: [
-      "/images/techfest-social.svg"
+      "/images/ai-tools-carousel.png"
     ],
     tools: ["Canva", "ChatGPT"],
     year: "2026",
-    featured: false,
-    isConcept: true,
-    objective: "Produce engaging, reusable social announcement templates to spotlight guest industry tech leads and alumni speakers.",
-    concept: "Editorial magazine aesthetics featuring high-contrast duotone frames, electric blue badges, and distinct swipe call-to-actions.",
-    palette: ["#090a12", "#13192e", "#38bdf8", "#818cf8", "#ffffff"],
-    typography: "Syne 800 + Plus Jakarta Sans + Space Mono",
-    process: "Used ChatGPT to structure speaker bio bullet points into snackable slide formats. Built modular Canva templates with drag-and-drop photo frames for rapid publishing.",
-    outcome: "Allowed the media team to publish 12 speaker cards in under 30 minutes, maintaining impeccable brand consistency across feeds."
+    featured: true,
+    isConcept: false,
+    objective: "Provide actionable, high-value productivity content for student peers to boost engagement across social feeds.",
+    concept: "Editorial publication aesthetic with warm copper accents, deep charcoal contrast, and clean categorized tool cards.",
+    palette: ["#9b6d52", "#100f0e", "#f6f0e9", "#c7bdb5"],
+    typography: "Plus Jakarta Sans Bold + Space Mono",
+    process: "Curated top AI tools, drafted bite-sized summaries with ChatGPT, and designed structured, swipe-friendly slide layouts.",
+    outcome: "A polished social media package engineered for saveability, shareability, and rapid content consumption."
   },
+  {
+    id: 5,
+    title: "CampusConnect UI Concept",
+    category: "uiux",
+    description: "A comprehensive mobile application case study and interface concept tailored for university student collaboration, schedules, and club updates.",
+    image: "/images/campusconnect-ui-concept.png",
+    images: [
+      "/images/campusconnect-ui-concept.png"
+    ],
+    tools: ["Figma"],
+    year: "2026",
+    featured: true,
+    isConcept: false,
+    objective: "Streamline campus life by consolidating event discovery, core team notices, and peer collaboration into an intuitive mobile UI.",
+    concept: "Apple Human Interface Guidelines (HIG) compliance with crisp card modules, dynamic status chips, and accessible blue/slate contrast.",
+    palette: ["#3e4e74", "#f7f9fd", "#bfc3ce", "#0f172a"],
+    typography: "SF Pro Style / Plus Jakarta Sans",
+    process: "Mapped user flow for campus students, designed interactive component library in Figma, and created multi-screen presentation layout.",
+    outcome: "A mature, end-to-end UI design case study demonstrating deep appreciation for layout ergonomics, readability, and visual hierarchy."
+  },
+
+  // ============================================================================
+  // ADDITIONAL CONCEPT & EXPLORATION PROJECTS
+  // ============================================================================
   {
     id: 6,
     title: "Bean & Brew — Artisan Coffee Identity",
@@ -183,9 +164,9 @@ export const projects = [
   },
   {
     id: 7,
-    title: "Design Different — Core Team Recruitment",
+    title: "Design Different — Typographic Series",
     category: "posters",
-    description: "Expressive typographic recruitment poster series inspiring students to apply for creative roles.",
+    description: "Expressive typographic poster series inspiring students to apply for creative and design lead roles.",
     image: "/images/recruitment-poster.svg",
     images: [
       "/images/recruitment-poster.svg"
