@@ -15,9 +15,13 @@ if (!categoryIds.includes('all') || !categoryIds.includes('posters') || !categor
   errors.push('Missing required category IDs');
 }
 
-// 2. Validate Projects
+// 2. Validate Exactly 5 Projects
 console.log(`✓ Total projects defined: ${projects.length}`);
+if (projects.length !== 5) {
+  errors.push(`Expected exactly 5 projects, but found ${projects.length}`);
+}
 
+let aiAssistedCount = 0;
 let conceptCount = 0;
 
 projects.forEach((p, idx) => {
@@ -28,6 +32,7 @@ projects.forEach((p, idx) => {
     }
   }
 
+  if (p.aiAssisted) aiAssistedCount++;
   if (p.isConcept) conceptCount++;
 
   // Check category validity
@@ -71,7 +76,8 @@ projects.forEach((p, idx) => {
   }
 });
 
-console.log(`✓ Concept projects identified & labelled: ${conceptCount}/${projects.length}`);
+console.log(`✓ AI-assisted projects identified & labelled: ${aiAssistedCount}`);
+console.log(`✓ Concept projects identified & labelled: ${conceptCount}`);
 
 // 3. Category distribution
 const counts = {};

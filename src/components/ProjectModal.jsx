@@ -110,8 +110,15 @@ export default function ProjectModal({
               </span>
             )}
 
+            {/* AI-Assisted Badge */}
+            {project.aiAssisted && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-[10px] font-mono text-purple-300">
+                <Sparkles className="w-2.5 h-2.5 text-purple-400" /> AI-Assisted Concept
+              </span>
+            )}
+
             {/* Concept Project Badge */}
-            {project.isConcept && (
+            {project.isConcept && !project.aiAssisted && (
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[10px] font-mono text-cyan-300">
                 <Compass className="w-2.5 h-2.5" /> Concept Design
               </span>
@@ -161,9 +168,17 @@ export default function ProjectModal({
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
                 {project.title}
               </h2>
-              {project.isConcept && (
+              {project.aiAssisted ? (
+                <span className="px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-300">
+                  AI-Assisted Concept
+                </span>
+              ) : project.isConcept ? (
+                <span className="px-3 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">
+                  Concept Design Study
+                </span>
+              ) : (
                 <span className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-canvas-dim">
-                  Self-Directed Design Exploration
+                  Original Design
                 </span>
               )}
             </div>

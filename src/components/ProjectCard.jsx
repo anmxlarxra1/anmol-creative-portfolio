@@ -26,7 +26,7 @@ export default function ProjectCard({ project, onSelect }) {
       {/* Image Preview Container */}
       <div className="relative aspect-[16/10] sm:aspect-[16/11] w-full overflow-hidden bg-dark-900">
         
-        {/* Badges Top Left: Featured & Concept */}
+        {/* Badges Top Left: Featured, AI-Assisted, & Concept */}
         <div className="absolute top-3 left-3 z-10 flex flex-wrap gap-1.5 items-center">
           {project.featured && (
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-950/85 backdrop-blur-md border border-amber-500/40 text-amber-300 text-[11px] font-mono font-medium shadow-lg shadow-amber-500/10">
@@ -35,7 +35,14 @@ export default function ProjectCard({ project, onSelect }) {
             </div>
           )}
 
-          {project.isConcept && (
+          {project.aiAssisted && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-950/85 backdrop-blur-md border border-purple-500/40 text-purple-300 text-[11px] font-mono font-medium shadow-lg shadow-purple-500/10">
+              <Sparkles className="w-3 h-3 text-purple-400" />
+              <span>AI-Assisted</span>
+            </div>
+          )}
+
+          {project.isConcept && !project.aiAssisted && (
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-950/85 backdrop-blur-md border border-cyan-500/40 text-cyan-300 text-[11px] font-mono font-medium shadow-lg shadow-cyan-500/10">
               <Compass className="w-3 h-3 text-cyan-400" />
               <span>Concept</span>
