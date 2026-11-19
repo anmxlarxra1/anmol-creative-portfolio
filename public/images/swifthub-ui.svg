@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uiDarkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07080c"/>
+      <stop offset="100%" stop-color="#0f1118"/>
+    </linearGradient>
+    <linearGradient id="screenAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0071e3"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#uiDarkBg)"/>
+
+  <!-- Left context -->
+  <g transform="translate(100, 160)">
+    <rect width="110" height="30" rx="6" fill="#112233" stroke="#1d4ed8" stroke-width="1"/>
+    <text x="14" y="20" fill="#60a5fa" font-family="'Space Mono', monospace" font-size="11">UI/UX DESIGN</text>
+
+    <text x="0" y="100" fill="#ffffff" font-family="'Syne', sans-serif" font-weight="800" font-size="60">SwiftHub App</text>
+    <text x="0" y="145" fill="#38bdf8" font-family="'Space Mono', monospace" font-size="16">CAMPUS MEMBER PORTAL // iOS 18 CONCEPT</text>
+
+    <text x="0" y="210" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" max-width="420">
+      Engineered adhering to Apple Human Interface Guidelines: dynamic island status chips, segmented event tabs, and biometric quick check-in.
+    </text>
+
+    <!-- Key highlights -->
+    <g transform="translate(0, 300)">
+      <circle cx="10" cy="10" r="5" fill="#0071e3"/>
+      <text x="28" y="15" fill="#e2e8f0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16">HIG Spatial Grid &amp; Blur Materials</text>
+      
+      <circle cx="10" cy="50" r="5" fill="#0071e3"/>
+      <text x="28" y="55" fill="#e2e8f0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16">SwiftUI Dynamic Type Compatibility</text>
+
+      <circle cx="10" cy="90" r="5" fill="#0071e3"/>
+      <text x="28" y="95" fill="#e2e8f0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16">Accessible 44pt Touch Targets</text>
+    </g>
+  </g>
+
+  <!-- Phone mockups (Right side) -->
+  <!-- Screen 1 (Back slightly rotated) -->
+  <g transform="translate(620, 100) rotate(-4)">
+    <rect width="250" height="520" rx="40" fill="#000000" stroke="#334155" stroke-width="6"/>
+    <!-- Notch / Dynamic Island -->
+    <rect x="85" y="16" width="80" height="22" rx="11" fill="#1e293b"/>
+    <!-- Screen content -->
+    <rect x="20" y="60" width="210" height="70" rx="14" fill="#1e293b"/>
+    <text x="35" y="90" fill="#94a3b8" font-size="11">NEXT WORKSHOP</text>
+    <text x="35" y="112" fill="#ffffff" font-weight="bold" font-size="14">SwiftData &amp; CloudKit</text>
+
+    <rect x="20" y="145" width="210" height="150" rx="16" fill="url(#screenAccent)" opacity="0.9"/>
+    <text x="35" y="180" fill="#ffffff" font-weight="bold" font-size="16">Core Team Badge</text>
+    <text x="35" y="200" fill="#e0f2fe" font-size="11">Active University Member</text>
+    <circle cx="180" cy="235" r="28" fill="#ffffff" fill-opacity="0.2"/>
+  </g>
+
+  <!-- Screen 2 (Front prominent) -->
+  <g transform="translate(790, 180) rotate(2)">
+    <rect width="260" height="540" rx="42" fill="#020408" stroke="#0071e3" stroke-width="3"/>
+    <!-- Dynamic island -->
+    <rect x="90" y="18" width="80" height="22" rx="11" fill="#0f172a"/>
+    <circle cx="155" cy="29" r="3" fill="#22c55e"/>
+
+    <!-- App Top Bar -->
+    <text x="25" y="75" fill="#94a3b8" font-size="12">Good afternoon,</text>
+    <text x="25" y="100" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20">Anmol ✨</text>
+
+    <!-- Quick action cards -->
+    <rect x="25" y="130" width="210" height="110" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="40" y="160" fill="#38bdf8" font-weight="600" font-size="12">EVENTS TODAY</text>
+    <text x="40" y="185" fill="#ffffff" font-weight="bold" font-size="16">Design Critique Lab</text>
+    <text x="40" y="210" fill="#64748b" font-size="12">5:00 PM • Lab 402</text>
+
+    <!-- Recent projects row -->
+    <text x="25" y="275" fill="#94a3b8" font-size="13" font-weight="600">Active Repositories</text>
+    <rect x="25" y="295" width="210" height="60" rx="12" fill="#111827"/>
+    <text x="40" y="325" fill="#f8fafc" font-size="13">VisionPro-GestureKit</text>
+    <text x="40" y="342" fill="#38bdf8" font-size="10">SwiftUI • 4 Contributors</text>
+
+    <rect x="25" y="365" width="210" height="60" rx="12" fill="#111827"/>
+    <text x="40" y="395" fill="#f8fafc" font-size="13">Campus-Nav-Core</text>
+    <text x="40" y="412" fill="#a855f7" font-size="10">MapKit • Updated today</text>
+  </g>
+</svg>

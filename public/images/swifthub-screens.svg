@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="screensBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06080d"/>
+      <stop offset="100%" stop-color="#0c111a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#screensBg)"/>
+
+  <text x="80" y="90" fill="#38bdf8" font-family="'Space Mono', monospace" font-size="14" letter-spacing="3">SWIFTHUB COMPANION // USER FLOW ITERATIONS</text>
+  <text x="80" y="145" fill="#f8fafc" font-family="'Syne', sans-serif" font-weight="700" font-size="34">Mobile Experience Architecture</text>
+
+  <!-- 3 screens flow -->
+  <!-- Screen 1: Splash -->
+  <g transform="translate(80, 200)">
+    <rect width="320" height="600" rx="28" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+    <text x="30" y="50" fill="#38bdf8" font-family="'Space Mono', monospace" font-size="12">SCREEN 01: ONBOARDING</text>
+    <circle cx="160" cy="220" r="60" fill="#0284c7" fill-opacity="0.2"/>
+    <circle cx="160" cy="220" r="35" fill="#0284c7"/>
+    <text x="160" y="340" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="22">Welcome to iOS Core</text>
+    <text x="160" y="375" text-anchor="middle" fill="#9ca3af" font-size="14">University Student Developer Wing</text>
+    
+    <rect x="40" y="490" width="240" height="50" rx="25" fill="#0284c7"/>
+    <text x="160" y="522" text-anchor="middle" fill="#ffffff" font-weight="600" font-size="15">Get Started</text>
+  </g>
+
+  <!-- Screen 2: Feed -->
+  <g transform="translate(440, 200)">
+    <rect width="320" height="600" rx="28" fill="#111827" stroke="#0284c7" stroke-width="2"/>
+    <text x="30" y="50" fill="#38bdf8" font-family="'Space Mono', monospace" font-size="12">SCREEN 02: EVENTS FEED</text>
+    
+    <rect x="25" y="80" width="270" height="130" rx="16" fill="#1e293b"/>
+    <text x="45" y="120" fill="#38bdf8" font-size="12" font-weight="bold">NEXT KEYNOTE</text>
+    <text x="45" y="150" fill="#fff" font-size="18" font-weight="bold">WWDC Swift Prep</text>
+    <text x="45" y="175" fill="#94a3b8" font-size="12">Tomorrow • 6 PM • Hall 3</text>
+
+    <rect x="25" y="230" width="270" height="130" rx="16" fill="#1e293b"/>
+    <text x="45" y="270" fill="#a855f7" font-size="12" font-weight="bold">DESIGN LAB</text>
+    <text x="45" y="300" fill="#fff" font-size="18" font-weight="bold">Figma to SwiftUI</text>
+    <text x="45" y="325" fill="#94a3b8" font-size="12">Friday • 4 PM • Discord</text>
+
+    <rect x="25" y="380" width="270" height="130" rx="16" fill="#1e293b"/>
+    <text x="45" y="420" fill="#10b981" font-size="12" font-weight="bold">HACKATHON</text>
+    <text x="45" y="450" fill="#fff" font-size="18" font-weight="bold">Campus Code Sprint</text>
+    <text x="45" y="475" fill="#94a3b8" font-size="12">Register before Nov 30</text>
+  </g>
+
+  <!-- Screen 3: Profile -->
+  <g transform="translate(800, 200)">
+    <rect width="320" height="600" rx="28" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+    <text x="30" y="50" fill="#38bdf8" font-family="'Space Mono', monospace" font-size="12">SCREEN 03: MEMBER PASSPORT</text>
+
+    <circle cx="160" cy="150" r="45" fill="#334155"/>
+    <text x="160" y="157" text-anchor="middle" fill="#ffffff" font-size="26">🎨</text>
+
+    <text x="160" y="225" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="20">Anmol</text>
+    <text x="160" y="248" text-anchor="middle" fill="#0284c7" font-size="13">Graphics &amp; UI Creative</text>
+
+    <rect x="35" y="290" width="250" height="230" rx="18" fill="#1e293b" stroke="#334155"/>
+    <text x="55" y="330" fill="#94a3b8" font-size="12">CONTRIBUTION BADGES</text>
+    
+    <rect x="55" y="355" width="210" height="40" rx="8" fill="#0f172a"/>
+    <text x="70" y="380" fill="#f8fafc" font-size="12">⭐️ Event Poster Master</text>
+
+    <rect x="55" y="405" width="210" height="40" rx="8" fill="#0f172a"/>
+    <text x="70" y="430" fill="#f8fafc" font-size="12">🎨 Brand Guidelines Contributor</text>
+
+    <rect x="55" y="455" width="210" height="40" rx="8" fill="#0f172a"/>
+    <text x="70" y="480" fill="#f8fafc" font-size="12">🚀 SwiftUI UI/UX Tester</text>
+  </g>
+</svg>

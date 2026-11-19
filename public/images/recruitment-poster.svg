@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="recBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0508"/>
+      <stop offset="50%" stop-color="#190a12"/>
+      <stop offset="100%" stop-color="#060204"/>
+    </linearGradient>
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="50%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#recBg)"/>
+
+  <!-- High-impact kinetic typography layout -->
+  <g transform="translate(100, 120)">
+    <rect width="160" height="34" rx="8" fill="#2c0b17" stroke="#881337" stroke-width="1"/>
+    <text x="20" y="23" fill="#fb7185" font-family="'Space Mono', monospace" font-size="12">CORE TEAM CALLOUT</text>
+
+    <!-- Kinetic oversized typography -->
+    <text x="0" y="140" fill="#ffffff" font-family="'Syne', sans-serif" font-weight="900" font-size="96" letter-spacing="-3">DESIGN</text>
+    <text x="0" y="235" fill="url(#crimsonGrad)" font-family="'Syne', sans-serif" font-weight="900" font-style="italic" font-size="96" letter-spacing="-3">DIFFERENT.</text>
+
+    <text x="0" y="320" fill="#fda4af" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="600">
+      Recruiting Visual Designers, Brand Creatives &amp; UI Animators.
+    </text>
+    <text x="0" y="360" fill="#9f1239" font-family="'Plus Jakarta Sans', sans-serif" font-size="18">
+      No corporate bureaucracy. Just high-voltage creativity, student agency, and pure design craft.
+    </text>
+
+    <!-- Perks Row -->
+    <g transform="translate(0, 440)">
+      <g transform="translate(0, 0)">
+        <circle cx="15" cy="15" r="15" fill="#f43f5e" fill-opacity="0.2"/>
+        <text x="45" y="20" fill="#fff" font-weight="bold" font-size="16">Figma &amp; Canva Masterclasses</text>
+      </g>
+      <g transform="translate(340, 0)">
+        <circle cx="15" cy="15" r="15" fill="#f43f5e" fill-opacity="0.2"/>
+        <text x="45" y="20" fill="#fff" font-weight="bold" font-size="16">Real Campus Event Branding</text>
+      </g>
+      <g transform="translate(670, 0)">
+        <circle cx="15" cy="15" r="15" fill="#f43f5e" fill-opacity="0.2"/>
+        <text x="45" y="20" fill="#fff" font-weight="bold" font-size="16">Core Team Leadership Badge</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Big Graphic Element Right -->
+  <g transform="translate(940, 450)">
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#f43f5e" stroke-width="3" stroke-dasharray="16 10"/>
+    <polygon points="0,-120 100,60 -100,60" fill="url(#crimsonGrad)" opacity="0.8"/>
+    <text x="0" y="10" text-anchor="middle" fill="#ffffff" font-family="'Space Mono', monospace" font-weight="bold" font-size="20">JOIN '26</text>
+  </g>
+</svg>

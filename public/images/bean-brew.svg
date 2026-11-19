@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="warmDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14110e"/>
+      <stop offset="50%" stop-color="#1f1812"/>
+      <stop offset="100%" stop-color="#0c0a08"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#warmDark)"/>
+
+  <!-- Center Circular Stamp Emblem -->
+  <g transform="translate(320, 450)">
+    <!-- Outer dashed seal -->
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="8 6"/>
+    <circle cx="0" cy="0" r="160" fill="#241b14" stroke="#453123" stroke-width="2"/>
+    <circle cx="0" cy="0" r="145" fill="none" stroke="#f59e0b" stroke-width="1"/>
+
+    <!-- Coffee Bean Icon abstraction -->
+    <path d="M -30 -40 C -60 10 -40 60 0 70 C 40 60 60 10 30 -40 C 0 -60 -20 -50 -30 -40 Z" fill="url(#amberGrad)"/>
+    <path d="M 0 -35 C 10 -10 -10 15 0 65" stroke="#1f1812" stroke-width="6" fill="none"/>
+
+    <text x="0" y="-85" text-anchor="middle" fill="#fef3c7" font-family="'Space Mono', monospace" font-size="12" letter-spacing="4">ESTD • 2026</text>
+    <text x="0" y="115" text-anchor="middle" fill="#fef3c7" font-family="'Space Mono', monospace" font-size="11" letter-spacing="3">CAMPUS ROASTERS</text>
+  </g>
+
+  <!-- Content text on the right -->
+  <g transform="translate(600, 240)">
+    <rect width="140" height="32" rx="6" fill="#332415" stroke="#78350f" stroke-width="1"/>
+    <text x="18" y="21" fill="#f59e0b" font-family="'Space Mono', monospace" font-size="12">BRAND &amp; PACKAGING</text>
+
+    <text x="0" y="100" fill="#fef3c7" font-family="'Playfair Display', serif, 'Syne'" font-weight="700" font-size="64" letter-spacing="-1">Bean &amp; Brew</text>
+    <text x="0" y="145" fill="#d97706" font-family="'Space Mono', monospace" font-size="15" letter-spacing="4">ARTISANAL COFFEE HOUSE</text>
+
+    <text x="0" y="220" fill="#d1d5db" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" max-width="500">
+      A handcrafted campus coffee visual identity pairing warm roasted tones, geometric typography, and tactile kraft paper textures.
+    </text>
+
+    <!-- Menu deliverables preview badges -->
+    <g transform="translate(0, 310)">
+      <rect width="140" height="65" rx="10" fill="#241b14" stroke="#453123"/>
+      <text x="16" y="28" fill="#f59e0b" font-family="'Space Mono', monospace" font-size="10">PRINT</text>
+      <text x="16" y="48" fill="#fef3c7" font-size="13" font-weight="600">Kraft Sleeves</text>
+
+      <rect x="160" y="0" width="140" height="65" rx="10" fill="#241b14" stroke="#453123"/>
+      <text x="176" y="28" fill="#f59e0b" font-family="'Space Mono', monospace" font-size="10">SIGNAGE</text>
+      <text x="176" y="48" fill="#fef3c7" font-size="13" font-weight="600">A-Frame Board</text>
+
+      <rect x="320" y="0" width="140" height="65" rx="10" fill="#241b14" stroke="#453123"/>
+      <text x="336" y="28" fill="#f59e0b" font-family="'Space Mono', monospace" font-size="10">COLLATERAL</text>
+      <text x="336" y="48" fill="#fef3c7" font-size="13" font-weight="600">Loyalty Cards</text>
+    </g>
+  </g>
+</svg>

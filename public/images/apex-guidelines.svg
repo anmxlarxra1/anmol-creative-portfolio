@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#141120"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#gBg)"/>
+
+  <text x="80" y="90" fill="#a78bfa" font-family="'Space Mono', monospace" font-size="14" letter-spacing="3">APEX BRAND SYSTEM // GUIDELINES &amp; APPLICATION</text>
+  <text x="80" y="145" fill="#f8fafc" font-family="'Syne', sans-serif" font-weight="700" font-size="34">Visual Rules &amp; Application Scenarios</text>
+
+  <!-- Clear Space Box -->
+  <g transform="translate(80, 200)">
+    <rect width="490" height="300" rx="20" fill="#141221" stroke="#2d2545" stroke-width="1.5"/>
+    <text x="40" y="50" fill="#a78bfa" font-family="'Space Mono', monospace" font-size="13">01. CLEAR SPACE &amp; SCALING</text>
+    
+    <!-- Mini emblem with exclusion zone dashed lines -->
+    <rect x="70" y="90" width="160" height="160" fill="none" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M 150 115 L 200 215 L 175 215 L 150 165 L 125 215 L 100 215 Z" fill="#8b5cf6"/>
+    <text x="75" y="110" fill="#a78bfa" font-size="11">X</text>
+    <text x="210" y="245" fill="#a78bfa" font-size="11">X</text>
+    
+    <text x="260" y="125" fill="#ffffff" font-weight="600" font-size="16">Exclusion Perimeter</text>
+    <text x="260" y="155" fill="#94a3b8" font-size="13" max-width="200">Maintain an exclusion boundary of 1X height around mark on all sides.</text>
+    <text x="260" y="210" fill="#ffffff" font-weight="600" font-size="16">Minimum Size</text>
+    <text x="260" y="235" fill="#94a3b8" font-size="13">24px digital / 8mm print</text>
+  </g>
+
+  <!-- Stationery / Merch mockup box -->
+  <g transform="translate(610, 200)">
+    <rect width="510" height="300" rx="20" fill="#141221" stroke="#2d2545" stroke-width="1.5"/>
+    <text x="40" y="50" fill="#a78bfa" font-family="'Space Mono', monospace" font-size="13">02. MERCH &amp; PHYSICAL LABELS</text>
+
+    <!-- Sticker badge -->
+    <rect x="60" y="90" width="180" height="170" rx="14" fill="#0c0c12" stroke="#4c3875" stroke-width="1.5"/>
+    <path d="M 150 130 L 180 190 L 165 190 L 150 160 L 135 190 L 120 190 Z" fill="#c084fc"/>
+    <text x="150" y="225" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">APEX LAB '26</text>
+
+    <!-- Pin badge -->
+    <circle cx="340" cy="175" r="75" fill="#7c3aed"/>
+    <path d="M 340 135 L 370 200 L 355 200 L 340 170 L 325 200 L 310 200 Z" fill="#ffffff"/>
+    <text x="340" y="220" text-anchor="middle" fill="#ffffff" font-size="10" letter-spacing="2">OFFICIAL PIN</text>
+  </g>
+
+  <!-- Typography pairings -->
+  <g transform="translate(80, 530)">
+    <rect width="1040" height="260" rx="20" fill="#141221" stroke="#2d2545" stroke-width="1.5"/>
+    <text x="40" y="45" fill="#a78bfa" font-family="'Space Mono', monospace" font-size="13">03. APPROVED TYPOGRAPHY STACK</text>
+
+    <text x="40" y="110" fill="#ffffff" font-family="'Syne', sans-serif" font-weight="800" font-size="32">Syne Bold</text>
+    <text x="40" y="145" fill="#94a3b8" font-size="14">Primary Display &amp; Headline Typeface. Used exclusively for logotypes and section intros.</text>
+
+    <text x="400" y="110" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="28">Plus Jakarta Sans</text>
+    <text x="400" y="145" fill="#94a3b8" font-size="14">Primary Body &amp; Descriptive Typeface. Clean, humanistic geometry with high legibility.</text>
+
+    <text x="760" y="110" fill="#c084fc" font-family="'Space Mono', monospace" font-weight="600" font-size="24">Space Mono</text>
+    <text x="760" y="145" fill="#94a3b8" font-size="14">Metadata, technical timestamps, index labels, and badge accents.</text>
+  </g>
+</svg>

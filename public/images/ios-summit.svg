@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="appleDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="60%" stop-color="#0f111a"/>
+      <stop offset="100%" stop-color="#020204"/>
+    </linearGradient>
+    <linearGradient id="swiftOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a00"/>
+      <stop offset="50%" stop-color="#ff0055"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+    <radialGradient id="swiftGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff5500" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#ff0077" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#appleDark)"/>
+
+  <!-- Subtle ambient glow in center-right -->
+  <circle cx="820" cy="450" r="380" fill="url(#swiftGlow)"/>
+
+  <!-- Frosted Glass Shapes reminiscent of Apple / iOS design -->
+  <g opacity="0.8">
+    <rect x="680" y="240" width="340" height="420" rx="40" fill="#181824" fill-opacity="0.5" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5"/>
+    <circle cx="760" cy="320" r="30" fill="url(#swiftOrange)"/>
+    <!-- Swift bird silhouette stylized abstraction -->
+    <path d="M 750 310 C 765 310 775 320 780 335 C 770 330 760 332 755 338 C 765 345 778 340 782 332 C 778 346 764 352 750 348 C 740 345 735 335 738 322 C 742 320 746 322 750 310 Z" fill="#ffffff"/>
+
+    <text x="730" y="420" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="28">Swift 6 &amp; SwiftUI</text>
+    <text x="730" y="455" fill="#a1a1aa" font-family="'Plus Jakarta Sans', sans-serif" font-size="16">Architecture • Spatial UI • Metal</text>
+
+    <line x1="730" y1="495" x2="970" y2="495" stroke="#ffffff" stroke-opacity="0.1"/>
+
+    <text x="730" y="540" fill="#ff7a00" font-family="'Space Mono', monospace" font-size="13">KEYNOTE SPEAKER</text>
+    <text x="730" y="570" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="18">Student App Pioneers</text>
+    <text x="730" y="595" fill="#71717a" font-family="'Plus Jakarta Sans', sans-serif" font-size="14">WWDC Swift Challenge Finalists</text>
+  </g>
+
+  <!-- Left Editorial Header -->
+  <g transform="translate(100, 140)">
+    <!-- Apple / iOS Pill Badge -->
+    <rect width="210" height="38" rx="19" fill="#1c1c28" stroke="#333346" stroke-width="1"/>
+    <circle cx="20" cy="19" r="5" fill="#0071e3"/>
+    <text x="35" y="24" fill="#e4e4e7" font-family="'Space Mono', monospace" font-size="12" font-weight="500">CAMPUS iOS CORE TEAM</text>
+
+    <!-- Main Typography -->
+    <text x="0" y="140" fill="#ffffff" font-family="'Syne', sans-serif" font-weight="800" font-size="88" letter-spacing="-2">DEV SUMMIT</text>
+    <text x="0" y="225" fill="url(#swiftOrange)" font-family="'Syne', sans-serif" font-weight="800" font-size="88" letter-spacing="-2">'26 EDITION.</text>
+
+    <text x="0" y="300" fill="#d4d4d8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="24">
+      Shaping the next generation of Apple platform creators.
+    </text>
+
+    <text x="0" y="340" fill="#71717a" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" max-width="500">
+      Join 300+ student developers and designers for hands-on labs, design critiques, and keynote showcases.
+    </text>
+
+    <!-- Bottom Schedule Cards -->
+    <g transform="translate(0, 420)">
+      <rect width="160" height="90" rx="14" fill="#14141e" stroke="#252535" stroke-width="1.5"/>
+      <text x="20" y="35" fill="#71717a" font-family="'Space Mono', monospace" font-size="11">DATE</text>
+      <text x="20" y="65" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18">NOV 14, 2026</text>
+    </g>
+
+    <g transform="translate(180, 420)">
+      <rect width="160" height="90" rx="14" fill="#14141e" stroke="#252535" stroke-width="1.5"/>
+      <text x="20" y="35" fill="#71717a" font-family="'Space Mono', monospace" font-size="11">LOCATION</text>
+      <text x="20" y="65" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18">Tech Aud. B</text>
+    </g>
+
+    <g transform="translate(360, 420)">
+      <rect width="160" height="90" rx="14" fill="#14141e" stroke="#252535" stroke-width="1.5"/>
+      <text x="20" y="35" fill="#71717a" font-family="'Space Mono', monospace" font-size="11">ACCESS</text>
+      <text x="20" y="65" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18">Free RSVP</text>
+    </g>
+  </g>
+</svg>

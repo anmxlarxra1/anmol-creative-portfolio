@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pulseDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05060a"/>
+      <stop offset="50%" stop-color="#120c1c"/>
+      <stop offset="100%" stop-color="#07040a"/>
+    </linearGradient>
+    <linearGradient id="glowMagenta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#pulseDark)"/>
+
+  <!-- Left details -->
+  <g transform="translate(100, 200)">
+    <rect width="110" height="30" rx="6" fill="#2d122e" stroke="#831843" stroke-width="1"/>
+    <text x="14" y="20" fill="#f472b6" font-family="'Space Mono', monospace" font-size="11">AUDIO UI/UX</text>
+
+    <text x="0" y="100" fill="#ffffff" font-family="'Syne', sans-serif" font-weight="800" font-size="64">Pulse Audio</text>
+    <text x="0" y="145" fill="#c084fc" font-family="'Space Mono', monospace" font-size="16">AMBIENT HAPTIC PLAYER // CONCEPT</text>
+
+    <text x="0" y="210" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" max-width="450">
+      An immersive audio experience exploring real-time soundwave visualization, dynamic glow aura, and gesture-driven volume scrubbing.
+    </text>
+
+    <!-- Waveform decorative bars -->
+    <g transform="translate(0, 310)" fill="url(#glowMagenta)">
+      <rect x="0" y="20" width="6" height="40" rx="3"/>
+      <rect x="12" y="10" width="6" height="60" rx="3"/>
+      <rect x="24" y="0" width="6" height="80" rx="3"/>
+      <rect x="36" y="25" width="6" height="30" rx="3"/>
+      <rect x="48" y="15" width="6" height="50" rx="3"/>
+      <rect x="60" y="5" width="6" height="70" rx="3"/>
+      <rect x="72" y="20" width="6" height="40" rx="3"/>
+      <rect x="84" y="30" width="6" height="20" rx="3"/>
+      <rect x="96" y="10" width="6" height="60" rx="3"/>
+      <rect x="108" y="0" width="6" height="80" rx="3"/>
+      <rect x="120" y="15" width="6" height="50" rx="3"/>
+      <rect x="132" y="25" width="6" height="30" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Player Card Frame Right -->
+  <g transform="translate(680, 160)">
+    <rect width="380" height="580" rx="32" fill="#14111d" stroke="#2c223d" stroke-width="2"/>
+    
+    <!-- Album Artwork Card -->
+    <rect x="40" y="40" width="300" height="300" rx="20" fill="url(#glowMagenta)"/>
+    <circle cx="190" cy="190" r="70" fill="#000000" fill-opacity="0.3"/>
+    <polygon points="182,175 205,190 182,205" fill="#ffffff"/>
+
+    <!-- Track title -->
+    <text x="40" y="380" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="22">Midnight Horizon</text>
+    <text x="40" y="410" fill="#9ca3af" font-family="'Plus Jakarta Sans', sans-serif" font-size="15">Synthetic Echoes</text>
+
+    <!-- Progress bar -->
+    <rect x="40" y="445" width="300" height="6" rx="3" fill="#2d253f"/>
+    <rect x="40" y="445" width="180" height="6" rx="3" fill="#ec4899"/>
+    <circle cx="220" cy="448" r="8" fill="#ffffff"/>
+
+    <text x="40" y="475" fill="#6b7280" font-family="'Space Mono', monospace" font-size="12">02:18</text>
+    <text x="340" y="475" text-anchor="end" fill="#6b7280" font-family="'Space Mono', monospace" font-size="12">-01:24</text>
+
+    <!-- Controls -->
+    <circle cx="190" cy="525" r="28" fill="#ec4899"/>
+    <polygon points="185,515 200,525 185,535" fill="#ffffff"/>
+  </g>
+</svg>
